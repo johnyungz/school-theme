@@ -1,7 +1,10 @@
 /* Navigation
 --------------------------------------------- */
 @import "navigation/navigation";
+@import "navigation/header";
 
+// Pages
+@import "pages/staff";
 /* Posts and pages
 --------------------------------------------- */
 @import "content/posts-and-pages";

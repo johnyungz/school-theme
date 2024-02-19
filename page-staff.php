@@ -16,7 +16,7 @@ get_header();
 ?>
 
 <main id="primary" class="site-main">
-    <div class="entry-content">
+    <div class="staff-entry-content">
 		<?php 
 		echo "<h1> ".get_the_title()." </h1>";
 		?>

@@ -1,0 +1,16 @@
+.staff-entry-content {
+    margin: 1rem;
+
+    h2{
+        text-decoration: 2px black underline;
+    }
+
+    a{
+        text-decoration: none;
+        color: rgb(55, 55, 139);
+        font-weight: bold;
+    }
+    a:active, a:hover, a:focus {
+        text-decoration: 2px rgb(55, 55, 139) underline;
+    }
+}

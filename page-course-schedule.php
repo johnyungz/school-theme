@@ -16,7 +16,7 @@ get_header();
 ?>
 
 <main id="primary" class="site-main">
-	<div class="entry-content">
+	<div class="schedule-entry-content">
 		<?php 
 		echo "<h1> ".get_the_title()." </h1>";
 		?>
@@ -26,7 +26,7 @@ get_header();
         the_post();
 
         if ( function_exists( 'have_rows' ) && have_rows('weekly_course_schedule') ) {
-			echo '<p>Weekly Course Schedule</p>';
+			echo '<p class="weekly-course-schedule">Weekly Course Schedule</p>';
             echo '<table>';
 			echo '<tr>';
 			echo '<th>Date</th>';

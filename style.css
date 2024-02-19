@@ -706,6 +706,20 @@ button {
   background: transparent;
 }
 
+.main-navigation {
+  text-align: center;
+}
+.main-navigation a {
+  color: white;
+  text-transform: uppercase;
+  font-weight: bold;
+}
+
+@media (min-width: 37.5em) {
+  .main-navigation a {
+    margin: 1rem;
+  }
+}
 .staff-entry-content {
   margin: 1rem;
 }
@@ -721,6 +735,20 @@ button {
   text-decoration: 2px rgb(55, 55, 139) underline;
 }
 
+@media (min-width: 37.5em) {
+  .staff-entry-content {
+    margin: 0 2rem;
+  }
+  .staff-faculty-section, .staff-admin-section {
+    display: flex;
+    gap: 1rem;
+  }
+}
+@media (min-width: 64em) {
+  .staff-entry-content {
+    margin: 0 3rem;
+  }
+}
 /* Posts and pages
 --------------------------------------------- */
 .sticky {

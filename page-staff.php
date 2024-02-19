@@ -38,6 +38,7 @@ get_header();
 
         if ( $faculty_query->have_posts() ) :
             echo '<h2>Faculty</h2>';
+            echo '<div class="staff-faculty-section">';
             while ( $faculty_query->have_posts() ) : $faculty_query->the_post();
                 ?>
                 <div class="staff-member">
@@ -48,6 +49,7 @@ get_header();
                 </div>
                 <?php
             endwhile;
+            echo '</div>';
             wp_reset_postdata();
         endif;
 
@@ -66,6 +68,7 @@ get_header();
 
         if ( $admin_query->have_posts() ) :
             echo '<h2>Administrative</h2>';
+            echo '<div class="staff-admin-section">';
             while ( $admin_query->have_posts() ) : $admin_query->the_post();
                 ?>
                 <div class="staff-member">
@@ -74,6 +77,7 @@ get_header();
                 </div>
                 <?php
             endwhile;
+            echo '</div>';
             wp_reset_postdata();
         endif;
         ?>

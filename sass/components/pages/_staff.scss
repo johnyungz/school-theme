@@ -14,3 +14,20 @@
         text-decoration: 2px rgb(55, 55, 139) underline;
     }
 }
+
+@media (min-width: 37.5em) {
+    .staff-entry-content {
+        margin: 0 2rem;
+    }
+
+    .staff-faculty-section, .staff-admin-section{
+        display: flex;
+        gap: 1rem;
+    }
+}
+
+@media (min-width: 64em) {
+    .staff-entry-content {
+        margin: 0 3rem;
+    }
+}

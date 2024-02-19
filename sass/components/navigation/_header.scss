@@ -8,3 +8,21 @@ button {
     border: none;
     background: transparent;
 }
+
+.main-navigation {
+    text-align: center;
+
+    a{
+        color: white;
+        text-transform: uppercase;
+        font-weight: bold;
+    }
+}
+
+@media (min-width: 37.5em) {
+    .main-navigation a {
+        margin: 1rem;
+    }
+
+    
+}

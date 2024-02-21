@@ -189,3 +189,17 @@ function fwd_change_staff_title_text( $title ) {
 }
 
 add_filter( 'enter_title_here', 'fwd_change_staff_title_text' );
+
+function fwd_scripts (){
+	if ( is_singular('post') ) {
+		wp_enqueue_script(
+			'fwd-navigation', 
+			get_template_directory_uri() . '/js/aos.js', 
+			array(), 
+			_S_VERSION, 
+			true 
+		);
+	}
+}
+
+add_action( 'wp_enqueue_scripts', 'fwd_scripts' );

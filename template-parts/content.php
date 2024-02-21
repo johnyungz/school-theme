@@ -9,7 +9,7 @@
 
 ?>
   
-<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+<article data-aos="fade-in" id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 	<header class="entry-header">
 		<?php
 		if ( is_singular() ) :
@@ -51,4 +51,8 @@
 	<footer class="entry-footer">
 		<?php school_theme_entry_footer(); ?>
 	</footer><!-- .entry-footer -->
+	<script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+	<script>
+		AOS.init();
+  	</script>
 </article><!-- #post-<?php the_ID(); ?> -->

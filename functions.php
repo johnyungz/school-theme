@@ -46,6 +46,8 @@ function school_theme_setup() {
 		*/
 	add_theme_support( 'post-thumbnails' );
 
+  //adding image size
+  add_image_size( 'portrait-blog', 200, 300, true );
 	// This theme uses wp_nav_menu() in one location.
 	register_nav_menus(
 		array(
@@ -114,6 +116,23 @@ function school_theme_content_width() {
 }
 add_action( 'after_setup_theme', 'school_theme_content_width', 0 );
 
+
+//custom logo
+add_theme_support( 'custom-logo' );
+function schoolSiteLogo() {
+	$defaults = array(
+		'height'               => 100,
+		'width'                => 400,
+		'flex-height'          => true,
+		'flex-width'           => true,
+		'header-text'          => array( 'school-site', 'school site' ),
+		'unlink-homepage-logo' => true, 
+	);
+	add_theme_support( 'custom-logo', $defaults );
+}
+add_action( 'after_setup_theme', 'schoolSiteLogo' );
+
+
 /**
  * Register widget area.
  *
@@ -139,7 +158,10 @@ add_action( 'widgets_init', 'school_theme_widgets_init' );
  */
 function school_theme_scripts() {
 	wp_enqueue_style( 'school-theme-style', get_stylesheet_uri(), array(), _S_VERSION );
-	wp_style_add_data( 'school-theme-style', 'rtl', 'replace' );
+  wp_enqueue_style( 'school-theme-style-scss', get_template_directory_uri() . '/sass/style.css', array(), '1' );
+
+  wp_style_add_data( 'school-theme-style', 'rtl', 'replace' );
+  wp_style_add_data( 'school-theme-style-scss', 'rtl', 'replace' );
 
 	wp_enqueue_script( 'school-theme-navigation', get_template_directory_uri() . '/js/navigation.js', array(), _S_VERSION, true );
 
@@ -169,6 +191,7 @@ require get_template_directory() . '/inc/template-functions.php';
  */
 require get_template_directory() . '/inc/customizer.php';
 
+// cpt
 require get_template_directory() . '/inc/cpt-taxonomy.php';
 
 /**
@@ -203,3 +226,34 @@ function fwd_scripts (){
 }
 
 add_action( 'wp_enqueue_scripts', 'fwd_scripts' );
+
+//change the excerpt length
+function shorten_excerpt( $length ) {
+  return 25;
+}
+
+add_filter( 'excerpt_length', 'shorten_excerpt', 9999);
+
+function my_excerpt_more( $more ) {
+	if ( ! is_single() ) {
+		$more = '... <a class="read-more" href="'.esc_url( get_permalink() ).'">Read more about the student</a>';
+	}
+
+	return $more;
+}
+add_filter( 'excerpt_more', 'my_excerpt_more' );
+
+//changing add title
+function change_add_title( $title ){
+  $screen = get_current_screen();
+
+  if  ( 'school-site-students' == $screen->post_type ) {
+       $title = 'Add new students';
+  }
+
+  return $title;
+}
+
+add_filter( 'enter_title_here', 'change_add_title' );
+
+?>

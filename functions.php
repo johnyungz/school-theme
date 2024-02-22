@@ -46,6 +46,8 @@ function school_theme_setup() {
 		*/
 	add_theme_support( 'post-thumbnails' );
 
+  //adding image size
+  add_image_size( 'portrait-blog', 200, 300, true );
 	// This theme uses wp_nav_menu() in one location.
 	register_nav_menus(
 		array(
@@ -189,12 +191,9 @@ require get_template_directory() . '/inc/template-functions.php';
  */
 require get_template_directory() . '/inc/customizer.php';
 
-<<<<<<< Updated upstream
-=======
 // cpt
 require get_template_directory() . '/inc/cpt-taxonomy.php';
 
->>>>>>> Stashed changes
 /**
  * Load Jetpack compatibility file.
  */
@@ -202,22 +201,34 @@ if ( defined( 'JETPACK__VERSION' ) ) {
 	require get_template_directory() . '/inc/jetpack.php';
 }
 
-<<<<<<< Updated upstream
-=======
 
 //change the excerpt length
 function shorten_excerpt( $length ) {
-  return 20;
+  return 25;
 }
 
 add_filter( 'excerpt_length', 'shorten_excerpt', 9999);
 
 function my_excerpt_more( $more ) {
 	if ( ! is_single() ) {
-		$more = '... <a class="read-more" href="'.esc_url( get_permalink() ).'">continue reading</a>';
+		$more = '... <a class="read-more" href="'.esc_url( get_permalink() ).'">Read more about the student</a>';
 	}
 
 	return $more;
 }
 add_filter( 'excerpt_more', 'my_excerpt_more' );
->>>>>>> Stashed changes
+
+//changing add title
+function change_add_title( $title ){
+  $screen = get_current_screen();
+
+  if  ( 'school-site-students' == $screen->post_type ) {
+       $title = 'Add new students';
+  }
+
+  return $title;
+}
+
+add_filter( 'enter_title_here', 'change_add_title' );
+
+?>

@@ -114,6 +114,23 @@ function school_theme_content_width() {
 }
 add_action( 'after_setup_theme', 'school_theme_content_width', 0 );
 
+
+//custom logo
+add_theme_support( 'custom-logo' );
+function schoolSiteLogo() {
+	$defaults = array(
+		'height'               => 100,
+		'width'                => 400,
+		'flex-height'          => true,
+		'flex-width'           => true,
+		'header-text'          => array( 'school-site', 'school site' ),
+		'unlink-homepage-logo' => true, 
+	);
+	add_theme_support( 'custom-logo', $defaults );
+}
+add_action( 'after_setup_theme', 'schoolSiteLogo' );
+
+
 /**
  * Register widget area.
  *
@@ -139,7 +156,10 @@ add_action( 'widgets_init', 'school_theme_widgets_init' );
  */
 function school_theme_scripts() {
 	wp_enqueue_style( 'school-theme-style', get_stylesheet_uri(), array(), _S_VERSION );
-	wp_style_add_data( 'school-theme-style', 'rtl', 'replace' );
+  wp_enqueue_style( 'school-theme-style-scss', get_template_directory_uri() . '/sass/style.css', array(), '1' );
+
+  wp_style_add_data( 'school-theme-style', 'rtl', 'replace' );
+  wp_style_add_data( 'school-theme-style-scss', 'rtl', 'replace' );
 
 	wp_enqueue_script( 'school-theme-navigation', get_template_directory_uri() . '/js/navigation.js', array(), _S_VERSION, true );
 
@@ -169,8 +189,12 @@ require get_template_directory() . '/inc/template-functions.php';
  */
 require get_template_directory() . '/inc/customizer.php';
 
+<<<<<<< Updated upstream
+=======
+// cpt
 require get_template_directory() . '/inc/cpt-taxonomy.php';
 
+>>>>>>> Stashed changes
 /**
  * Load Jetpack compatibility file.
  */
@@ -178,28 +202,22 @@ if ( defined( 'JETPACK__VERSION' ) ) {
 	require get_template_directory() . '/inc/jetpack.php';
 }
 
-function fwd_change_staff_title_text( $title ) {
-    $screen = get_current_screen();
-    
-    if ( 'fwd-staff' == $screen->post_type ) {
-        $title = 'Add staff name';
-    }
-    
-    return $title;
+<<<<<<< Updated upstream
+=======
+
+//change the excerpt length
+function shorten_excerpt( $length ) {
+  return 20;
 }
 
-add_filter( 'enter_title_here', 'fwd_change_staff_title_text' );
+add_filter( 'excerpt_length', 'shorten_excerpt', 9999);
 
-function fwd_scripts (){
-	if ( is_singular('post') ) {
-		wp_enqueue_script(
-			'fwd-navigation', 
-			get_template_directory_uri() . '/js/aos.js', 
-			array(), 
-			_S_VERSION, 
-			true 
-		);
+function my_excerpt_more( $more ) {
+	if ( ! is_single() ) {
+		$more = '... <a class="read-more" href="'.esc_url( get_permalink() ).'">continue reading</a>';
 	}
-}
 
-add_action( 'wp_enqueue_scripts', 'fwd_scripts' );
+	return $more;
+}
+add_filter( 'excerpt_more', 'my_excerpt_more' );
+>>>>>>> Stashed changes

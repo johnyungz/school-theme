@@ -189,12 +189,12 @@ require get_template_directory() . '/inc/template-functions.php';
  */
 require get_template_directory() . '/inc/customizer.php';
 
-<<<<<<< Updated upstream
-=======
+// <<<<<<< Updated upstream
+// =======
 // cpt
 require get_template_directory() . '/inc/cpt-taxonomy.php';
 
->>>>>>> Stashed changes
+// >>>>>>> Stashed changes
 /**
  * Load Jetpack compatibility file.
  */
@@ -202,8 +202,8 @@ if ( defined( 'JETPACK__VERSION' ) ) {
 	require get_template_directory() . '/inc/jetpack.php';
 }
 
-<<<<<<< Updated upstream
-=======
+// <<<<<<< Updated upstream
+// =======
 
 //change the excerpt length
 function shorten_excerpt( $length ) {
@@ -220,4 +220,4 @@ function my_excerpt_more( $more ) {
 	return $more;
 }
 add_filter( 'excerpt_more', 'my_excerpt_more' );
->>>>>>> Stashed changes
+// >>>>>>> Stashed changes

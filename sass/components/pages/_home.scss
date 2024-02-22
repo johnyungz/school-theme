@@ -1,0 +1,37 @@
+.recent-news-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    justify-content: center;
+
+    h3{
+    // text-align: center;
+        position: absolute;
+        z-index: 10;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        text-align: center;
+        background-color: rgba(255, 255, 255, 0.669);
+        padding: 1rem 0;
+        margin-bottom: 0;
+    }
+
+    article {
+        position: relative;
+    }
+
+    img{
+        max-width: 100%;
+        height: auto;
+    }
+
+
+}
+
+@media (min-width: 64em) {
+    .recent-news-container {
+        flex-wrap: nowrap;
+    }
+}
+

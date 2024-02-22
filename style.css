@@ -885,6 +885,36 @@ button {
     margin: 0 15rem;
   }
 }
+.recent-news-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  justify-content: center;
+}
+.recent-news-container h3 {
+  position: absolute;
+  z-index: 10;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  text-align: center;
+  background-color: rgba(255, 255, 255, 0.669);
+  padding: 1rem 0;
+  margin-bottom: 0;
+}
+.recent-news-container article {
+  position: relative;
+}
+.recent-news-container img {
+  max-width: 100%;
+  height: auto;
+}
+
+@media (min-width: 64em) {
+  .recent-news-container {
+    flex-wrap: nowrap;
+  }
+}
 /* Posts and pages
 --------------------------------------------- */
 .sticky {

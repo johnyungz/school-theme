@@ -720,6 +720,9 @@ button {
   text-transform: uppercase;
   font-weight: bold;
 }
+.main-navigation a:active, .main-navigation a:focus, .main-navigation a:hover {
+  border-bottom: 2px white solid;
+}
 
 @media (min-width: 37.5em) {
   .main-navigation a {

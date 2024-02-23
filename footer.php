@@ -18,15 +18,22 @@
 				<?php
         echo "<div>".get_custom_logo()."</div>";
 				/* translators: 1: Theme name, 2: Theme author. */
-				printf( esc_html__( 'Theme: %1$s by %2$s.', 'school-theme' ), 'school-theme', '<a href="http://johnyungzhou.com/school-site">John, Veronica</a>' );
+        echo "<div class='names'>";
+				printf( esc_html__( 'Theme: %1$s by %2$s', 'school-theme' ), 'school-theme', '<a href="http://johnyungzhou.com/school-site">John, Veronica</a>' );
+        echo "</div>";
 
-        wp_nav_menu(
-          array(
-            'theme_location' => 'footer-left',
-            'menu_id'        => 'footer-menu',
-          )
-        );
-				?>
+        echo "<div>";
+        echo "<h3>links</h3>";
+          wp_nav_menu(
+            array(
+              'theme_location' => 'footer',
+              'menu_id'        => 'footer-menu',
+            )
+          );
+          echo "</div>";
+        
+          ?>
+			
 		</div><!-- .site-info -->
 	</footer><!-- #colophon -->
 </div><!-- #page -->

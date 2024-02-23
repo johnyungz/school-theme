@@ -57,6 +57,7 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
 # Generic
 --------------------------------------------------------------*/
 
+
 /* Normalize
 --------------------------------------------- */
 @import "generic/normalize";
@@ -157,7 +158,74 @@ margin: 1rem;
 .site-footer {
   background-color: #333;
   color: #fdfdfd;
+
+  .site-info {
+    max-width: 60rem;
+    display: block;
+    text-align: center;
+    margin: 0 auto;
+      
+  img {
+    margin-top: 1rem;
+    display: block;
+    width: 100px;
+    height: 100px;
+  }
+
+  .menu {
+    margin: 0;
+    padding: 0;
+  
+  }
+
+  .names {
+    margin-top: 1rem;
+  }
+
+  h3{
+    margin-top: 1rem;
+  }
+
+  a {
+    color: #fdfdfd;
+    text-decoration: none;
+  }
+
+  @media only screen and (min-width: 60rem) {
+      display: flex;
+      justify-content: space-evenly;
+  }
 }
+ul {
+  li {
+    list-style-type: none;
+    padding-bottom: 1rem;
+    }
+  }
+  a:hover {
+    color: darkblue;
+  }
+}
+
+#masthead {
+  display: flex;
+  justify-content: space-between; 
+  nav#site-navigation{
+    width: 3rem;
+  }
+  @media only screen and (min-width: 40rem){
+    nav#site-navigation {
+      width: 40rem;
+    }
+  }
+  ul.sub-menu{
+    li{
+      background-color: #333
+    }
+  }
+}
+
+
 /*--------------------------------------------------------------
 # Plugins
 --------------------------------------------------------------*/

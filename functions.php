@@ -129,6 +129,7 @@ function schoolSiteLogo() {
 		'unlink-homepage-logo' => true, 
 	);
 	add_theme_support( 'custom-logo', $defaults );
+  add_theme_support( 'align-wide' );
 }
 add_action( 'after_setup_theme', 'schoolSiteLogo' );
 

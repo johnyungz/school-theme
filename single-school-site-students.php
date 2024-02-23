@@ -19,9 +19,9 @@ get_header();
         while ( have_posts() ) :
             the_post();
             ?>
-            <article>
+            <article class='students-single-container'> 
                 <h2><?php the_title(); ?></h2>
-                <?php the_post_thumbnail( 'portrait-blog' ); 
+                <?php the_post_thumbnail( 'medium' ); 
                 the_content();
 
                 // Get the terms associated with the current post
@@ -52,7 +52,7 @@ get_header();
 
                 $query = new WP_Query( $args );
                 if ( $query->have_posts() ) {
-                    echo '<h3>Other Posts:</h3>';
+                    echo "<h3>Other ".$term->name." students</h3>";
                     while ( $query->have_posts() ) {
                         $query->the_post();
                         echo '<a href="' . esc_url( get_permalink() ) . '">' . get_the_title() . '</a><br>';

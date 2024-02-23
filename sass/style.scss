@@ -79,7 +79,9 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
 .site-main {
   max-width: 60rem;
   margin: 0 auto;
+  padding: 0 1rem;
 }
+
 
 /*--------------------------------------------------------------
 # Components
@@ -121,6 +123,40 @@ margin: 1rem;
 .student-card {
   width: 300px;
   margin: 0 auto;
+}
+
+// student taxonomy styling
+.student-tax-card {
+  clear: both;
+  display: block;
+  img.wp-post-image {
+    margin-right: 1rem;
+    display: inline;
+    float: left;
+  }
+  div {
+    a {
+      margin-top: 1rem;
+    }
+  }
+}
+
+// students single page styling 
+.students-single-container {
+  clear: both;
+  display: block;
+  img {
+    margin-left: 1rem;
+    display: inline;
+    float: right;
+  }
+
+}
+
+// footer 
+.site-footer {
+  background-color: #333;
+  color: #fdfdfd;
 }
 /*--------------------------------------------------------------
 # Plugins

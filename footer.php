@@ -13,16 +13,19 @@
 
 	<footer id="colophon" class="site-footer">
 		<div class="site-info">
-			<a href="<?php echo esc_url( __( 'https://wordpress.org/', 'school-theme' ) ); ?>">
+			
+			
 				<?php
-				/* translators: %s: CMS name, i.e. WordPress. */
-				printf( esc_html__( 'Proudly powered by %s', 'school-theme' ), 'WordPress' );
-				?>
-			</a>
-			<span class="sep"> | </span>
-				<?php
+        echo "<div>".get_custom_logo()."</div>";
 				/* translators: 1: Theme name, 2: Theme author. */
 				printf( esc_html__( 'Theme: %1$s by %2$s.', 'school-theme' ), 'school-theme', '<a href="http://johnyungzhou.com/school-site">John, Veronica</a>' );
+
+        wp_nav_menu(
+          array(
+            'theme_location' => 'footer-left',
+            'menu_id'        => 'footer-menu',
+          )
+        );
 				?>
 		</div><!-- .site-info -->
 	</footer><!-- #colophon -->

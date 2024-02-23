@@ -32,7 +32,7 @@ if ( $query -> have_posts() ) {
       <article class='student-card'>
         <?php
       echo "<h2><a href='".get_the_permalink()."'>".esc_html( get_the_title() ) .'</a></h2>';
-      the_post_thumbnail( 'medium' );
+      the_post_thumbnail( 'student-landscape' );
       the_excerpt();
       $terms = get_the_terms($post->ID, 'school-site-students-taxonomy');
       

@@ -23,9 +23,11 @@ get_header();
 		<p>This is the schedule for the upcoming week of classes. It is updated every Sunday evening. Lorem ipsum cras nec dui sodales, congue lacus quis, aliquam ante. Aenean enim nisi, venenatis eu lectus commodo, tristique posuere ligula. Nam velit erat, mollis tincidunt auctor id, hendrerit eget turpis.</p>
     <?php
     while ( have_posts() ) :
+        echo '1';
         the_post();
 
         if ( function_exists( 'have_rows' ) && have_rows('weekly_course_schedule') ) {
+          echo '2';
 			echo '<p class="weekly-course-schedule">Weekly Course Schedule</p>';
             echo '<table>';
 			echo '<tr>';
@@ -63,5 +65,5 @@ get_header();
 </main><!-- #main -->
 
 <?php
-get_sidebar();
+
 get_footer();

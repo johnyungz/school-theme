@@ -160,10 +160,12 @@ function fwd_register_taxonomies_service() {
     'hierarchical'      => true,
     'labels'            => $labels,
     'show_ui'           => true,
-    'show_admin_column' => true,
+    'show_in_menu'      => true,
+    'show_in_nav_menu'  => true,
     'show_in_rest'      => true,
+    'show_admin_column' => true,
     'query_var'         => true,
-    'rewrite'           => array( 'slug' => 'students' ),
+    'rewrite'           => array( 'slug' => 'student-types' ),
   );
   
   register_taxonomy( 'school-site-students-taxonomy', array( 'school-site-students' ), $args ); 

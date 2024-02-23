@@ -617,6 +617,7 @@ textarea {
 .site-main {
   max-width: 60rem;
   margin: 0 auto;
+  padding: 0 1rem;
 }
 
 /*--------------------------------------------------------------
@@ -1084,6 +1085,34 @@ button {
 .student-card {
   width: 300px;
   margin: 0 auto;
+}
+
+.student-tax-card {
+  clear: both;
+  display: block;
+}
+.student-tax-card img.wp-post-image {
+  margin-right: 1rem;
+  display: inline;
+  float: left;
+}
+.student-tax-card div a {
+  margin-top: 1rem;
+}
+
+.students-single-container {
+  clear: both;
+  display: block;
+}
+.students-single-container img {
+  margin-left: 1rem;
+  display: inline;
+  float: right;
+}
+
+.site-footer {
+  background-color: #333;
+  color: #fdfdfd;
 }
 
 /*--------------------------------------------------------------

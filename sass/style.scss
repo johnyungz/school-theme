@@ -76,6 +76,11 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
 // @import "layouts/content-sidebar"; // Uncomment this line for a sidebar on right side of your content.
 // @import "layouts/sidebar-content"; // Uncomment this line for a sidebar on left side of your content.
 
+.site-main {
+  max-width: 60rem;
+  margin: 0 auto;
+}
+
 /*--------------------------------------------------------------
 # Components
 --------------------------------------------------------------*/
@@ -95,10 +100,27 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
 
 @media only screen and (min-width: 1300px) {
 	.alignwide {
-		max-width: 1300px;
-		margin-left: -150px;
-		margin-right: -150px;
+		max-width: 60rem;
+		margin: 0 auto;
 	}
+}
+
+//student styling
+.students-header {
+margin: 1rem;
+}
+
+.students-container {
+  @media only screen and (min-width: 38rem) {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin: 0 auto;
+  }
+}
+.student-card {
+  width: 300px;
+  margin: 0 auto;
 }
 /*--------------------------------------------------------------
 # Plugins
